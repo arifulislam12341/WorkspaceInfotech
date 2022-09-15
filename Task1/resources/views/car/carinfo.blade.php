@@ -20,6 +20,7 @@
           <div>
           <a class="btn btn-outline-success text-dark text-uppercase fw-bold fst-italic" href="{{route('carCreate')}}">Add Car</a>
           <a class="btn btn-outline-success text-dark text-uppercase fw-bold fst-italic" href="{{route('dashboard')}}">Back</a>
+          
           </div>
         </div>
     </nav>

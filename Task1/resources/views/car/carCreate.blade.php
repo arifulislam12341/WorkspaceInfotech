@@ -11,6 +11,17 @@
 
 </head>
 <body class="mb-5">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container ">
+            <div>
+          <p>Workspace <br> Infotech </p>
+          </div>
+          <div>
+      
+          <a class="btn btn-outline-success text-dark text-uppercase fw-bold fst-italic" href="{{route('dashboard')}}">Back</a>
+          </div>
+        </div>
+    </nav>
 <h1 class="text-center text-dark">Add Car</h1>
     <div class="container">
     <!-- <div class="row  justify-content-center align-items-center">

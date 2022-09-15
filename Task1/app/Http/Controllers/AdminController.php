@@ -17,6 +17,8 @@ class AdminController extends Controller
     }
 
     public function signinSubmit(Request $request){
+        $hash = Hash::make('$request->password');
+
         $validate=$request->validate(
             [
                 
