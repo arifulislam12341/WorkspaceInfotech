@@ -7,7 +7,7 @@ use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
 use Session;
 use Illuminate\Support\Facades\Cookie;
-
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -17,8 +17,7 @@ class AdminController extends Controller
     }
 
     public function signinSubmit(Request $request){
-       
-
+      
         $validate=$request->validate(
             [
                 
@@ -36,12 +35,11 @@ class AdminController extends Controller
             ]
             );
             $admin=Admin::where("email",$request->email)
-            ->where("password",$request->password)
-        
                 ->first();
         
-                if ($admin){
+                if (Hash::check($request->password,$admin->password)){
                     $request->session()->put("id",$admin->id); 
+                    $request->session()->put("pass",$request->password); 
                     if ($request->remember) {
                         setcookie('remember',$request->email, time()+36000);
                         Cookie::queue('name',$admin->email,time()+60);
@@ -55,19 +53,20 @@ class AdminController extends Controller
         
                 return back();
        
+                }
+    
 
-    }
     public function dashboard(){
         $id=Session::get("id");
         $keys =Admin::where("id",$id)->first();
-       
-     
+        $keys->password=Session::get("pass");
         return view("admin.dashboard")->with('keys', $keys);
        
 
     }
     public function Logout(){
         session()->forget('id');
+        session()->forget('pass');
         return redirect()->route('signin');
     }
 }

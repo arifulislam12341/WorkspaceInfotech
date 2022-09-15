@@ -29,3 +29,5 @@ Route::get('/carinfo', [CarController::class, 'carinfo'])->name('carinfo');
 
 Route::get('/carUpdate/{id}',[CarController::class,'carUpdate'])->name('carUpdate')->middleware([AdminMiddleware::class]);
 Route::post('/carUpdate',[CarController::class,'carUpdateSubmit'])->name('carUpdate')->middleware([AdminMiddleware::class]);
+
+

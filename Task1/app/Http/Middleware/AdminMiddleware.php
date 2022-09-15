@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-
+use Session;
 class AdminMiddleware
 {
     /**
@@ -16,7 +16,8 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (session('role') == '0') {
+        $id=Session::get("id");
+        if ($id) {
             return $next($request);
         } else{
             return redirect()->route('signin');
