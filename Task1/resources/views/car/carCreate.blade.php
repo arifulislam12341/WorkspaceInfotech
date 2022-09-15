@@ -31,21 +31,9 @@
     @error('make')
     <span  class="text-white">{{$message}}</span>
     @enderror
-    <br>
-    <label class="text-white text-uppercase fw-bold" for="">Model</label>
-    <input type="text" class="form-control" name="model" value="{{old('model')}}">
-    @error('model')
-    <span  class="text-white">{{$message}}</span>
-    @enderror
-    <br>
-    <label class="text-white text-uppercase fw-bold" for="">Vin</label>
-    <input type="text" class="form-control" name="vin" value="{{old('vin')}}">
-    @error('vin')
-    <span  class="text-white">{{$message}}</span>
-    @enderror
-    <br>
-    <label class="text-white text-uppercase fw-bold" for="">Price</label>
-    <input type="text" class="form-control" name="price" value="{{old('price')}}">
+  
+    <label class="text-white text-uppercase fw-bold" for="">Founded</label>
+    <input type="text" class="form-control" name="founded" value="{{old('founded')}}">
     @error('price')
     <span  class="text-white">{{$message}}</span>
     @enderror

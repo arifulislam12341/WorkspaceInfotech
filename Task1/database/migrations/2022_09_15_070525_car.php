@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
+           
+            $table->string('make');
+            $table->string('founded');
+            $table->string('image');
             $table->timestamps();
         });
     }

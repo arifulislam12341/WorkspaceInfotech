@@ -25,3 +25,6 @@ Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 Route::get('/carCreate', [CarController::class, 'carCreate'])->name('carCreate');
 Route::post('/carCreate', [CarController::class, 'carCreateSubmit'])->name('carCreate');
 Route::get('/carinfo', [CarController::class, 'carinfo'])->name('carinfo');
+
+Route::get('/carUpdate/{id}',[CarController::class,'carUpdate'])->name('carUpdate');
+Route::post('/carUpdate',[CarController::class,'carUpdateSubmit'])->name('carUpdate');
