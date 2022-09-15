@@ -7,7 +7,7 @@ use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
 use Session;
 use Illuminate\Support\Facades\Cookie;
-//use Illuminate\Support\Facades\Hash;
+
 
 class AdminController extends Controller
 {
@@ -17,7 +17,7 @@ class AdminController extends Controller
     }
 
     public function signinSubmit(Request $request){
-        $hash = Hash::make('$request->password');
+       
 
         $validate=$request->validate(
             [

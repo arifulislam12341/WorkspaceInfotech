@@ -22,5 +22,4 @@ class AdminSeeder extends Seeder
             'address'=>'Dhaka',
         ]);
         
-    }
-}
+    }}
