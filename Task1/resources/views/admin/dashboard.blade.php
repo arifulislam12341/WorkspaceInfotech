@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,50 +16,44 @@
           <p>Workspace <br> Infotech </p>
           </div>
           <div class="d-flex justify-content-center">
-            
-          <a class="btn btn-outline-success text-dark text-uppercase fw-bold fst-italic" href="{{route('carCreate')}}">Add Car</a>
-          <a class="nav-link btn btn-outline-success" href="{{route('carinfo')}}">Cars</a>
-          <a class="nav-link btn btn-outline-success" href="{{route('logout')}}">LogOut</a>
+          <a class="nav-link btn btn-outline-success" href="{{route('admin.logout')}}">LogOut</a>
      
           </div>
         </div>
     </nav>
 <br>
+@if(Session::has('error'))
+<div class="alert alert-danger d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+  <div>
+   {{session::get('error')}}
+  </div>
+</div>
 
-  
-<h1 class="text-center text-dark">Admin Profile Details</h1>
+@endif
+<br>
+<h1 class="text-center text-dark">Welcome {{Auth::guard('admin')->user()->name}}</h1>
 
 <br>
 <br>
     <table class="table table-hover">
  
-    <tr class="table-dark  " >
+<tr class="table-dark  " >
 
-<th class="text-white text-uppercase fw-bold">Admin id</th>
-<th class="text-white text-uppercase fw-bold">Name</th>
-<th class="text-white text-uppercase fw-bold">Email</th>
-<th class="text-white text-uppercase fw-bold">Password</th>
-<th class="text-white text-uppercase fw-bold">Phone</th>
-
-
-<th class="text-white text-uppercase fw-bold">Address</th>
+   <th class="text-white text-uppercase fw-bold">Admin id</th>
+   <th class="text-white text-uppercase fw-bold">Name</th>
+   <th class="text-white text-uppercase fw-bold">Email</th>
+ 
 </tr>
 
 
 <tr class=" table-success ">
-            <td>{{$keys->id}}</td>
+            <td>{{Auth::guard('admin')->user()->id}}</td>
       
-            <td>{{$keys->name}}</td>
+            <td>{{Auth::guard('admin')->user()->name}}</td>
       
-            <td>{{$keys->email}}</td>
-       
-            <td>{{$keys->password}}</td>
-     
-            <td>{{$keys->phone}}</td>
-
-            
-    
-            <td>{{$keys->address}}</td>
+            <td>{{Auth::guard('admin')->user()->email}}</td>
+           
         </tr>
      
    
