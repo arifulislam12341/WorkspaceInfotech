@@ -43,9 +43,9 @@
     <br>
     <label class="text-white text-uppercase fw-bold" for="">Image </label>
     <input type="file" class="form-control" name="image" value="{{$car->image}}">
-    <!-- @error('image')
+    @error('image')
     <span class="text-white">{{$message}}</span>
-    @enderror<br> -->
+    @enderror<br>
     <br>
     <button class="btn btn-outline-dark text-uppercase fst-italic fw-bold btn-lg" type="submit">Submit</button>
    

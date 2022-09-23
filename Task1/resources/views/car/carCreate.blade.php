@@ -42,17 +42,20 @@
     @error('make')
     <span  class="text-white">{{$message}}</span>
     @enderror
-  
+  <br>
     <label class="text-white text-uppercase fw-bold" for="">Founded</label>
     <input type="text" class="form-control" name="founded" value="{{old('founded')}}">
-    @error('price')
+    @error('founded')
     <span  class="text-white">{{$message}}</span>
     @enderror
     <br>
     <label class="text-white text-uppercase fw-bold" for="">Image</label>
     <input type="file" class="form-control" name="image" value="">
   
-    
+    @error('image')
+    <span  class="text-white">{{$message}}</span>
+    @enderror
+    <br>
 
    
     <br>

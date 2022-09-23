@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                 
+                 <h6 class="fw-bold fst-italic text-uppercase">Workspace<br>Infotech</h6>
                 </div>
 
                 <!-- Navigation Links -->

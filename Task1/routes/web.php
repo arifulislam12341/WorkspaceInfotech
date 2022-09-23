@@ -25,7 +25,7 @@ use App\Http\Controllers\CarController;
 
 /*.............................Admin Route...............*/
 Route::get('/', function () {
-    return view('admin.register');
+    return view('admin.login');
 });
 
 Route::get('/dashboard', function () {
@@ -39,7 +39,7 @@ require __DIR__.'/adminauth.php';
 Route::get('/carCreate', [CarController::class, 'carCreate'])->name('carCreate')->middleware(['auth:admin']);
 Route::post('/carCreate', [CarController::class, 'carCreateSubmit'])->name('carCreate')->middleware(['auth:admin']);
 
-Route::get('/carinfo', [CarController::class, 'carinfo'])->name('carinfo');
+Route::get('/carinfo', [CarController::class, 'carinfo'])->name('carinfo')->middleware(['auth:admin']);
 
 Route::get('/carUpdate/{id}',[CarController::class,'carUpdate'])->name('carUpdate')->middleware(['auth:admin']);
 Route::post('/carUpdate',[CarController::class,'carUpdateSubmit'])->name('carUpdate')->middleware(['auth:admin']);

@@ -62,6 +62,22 @@ class CarController extends Controller
     
        public function carUpdateSubmit(Request $request){
        
+        $validate=$request->validate(
+            [
+                'make'=>'required|min:3|max:100',
+                'founded'=>'required',
+                'image'=>'required|mimes:jpg,png,jpeg|max:5048',
+                
+        
+            ],
+            [
+                'make.required'=>'Please Enter make',
+                'founded.required'=>'Please Enter model',
+                'image.required'=>'Please Upload jpg,png,jpeg',
+                
+               
+            ]
+            );
            $car =Car ::where('id', $request->id)->first();
            
          
